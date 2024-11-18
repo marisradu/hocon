@@ -320,7 +320,8 @@ map_to_list(M) ->
 gen_map_field(K, V, Opts) when is_map(V) ->
     [maybe_quote_key(K), " ", gen(V, Opts)];
 gen_map_field(K, V, Opts) ->
-    [maybe_quote_key(K), " = ", gen(V, Opts)].
+    Separator = maps:get(separator, Opts, " = "),
+    [maybe_quote_key(K), Separator, gen(V, Opts)].
 
 maybe_quote_key(K) when is_atom(K) -> atom_to_list(K);
 maybe_quote_key(K0) ->
