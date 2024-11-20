@@ -1,4 +1,4 @@
-{application, hocon, [
+{application, wsp_hocon, [
     {description, "HOCON configuration file Parser"},
     {vsn, "git"},
     {registered, []},
